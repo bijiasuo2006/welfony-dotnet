@@ -1,0 +1,12 @@
+﻿@page "/"
+
+@using Welfony.App.Common;
+@using Welfony.App.Models;
+
+@inject AppState appState;
+
+<div>
+	Index: @appState.Count
+</div>
+
+<button @onclick="@(() => appState.Count++)">Click</button>

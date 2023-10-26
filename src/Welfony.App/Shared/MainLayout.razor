@@ -1,0 +1,26 @@
+﻿@inherits LayoutComponentBase
+
+@using Welfony.App.Common;
+@using Welfony.App.Models;
+
+@inject AppState appState;
+
+<div>
+	Layout: @appState.Count
+</div>
+
+@Body
+
+@code
+{
+	protected override void OnInitialized()
+	{
+		appState.StateHasChanged.Action = StateHasChanged;
+		// appState.PropertyChanged += (sender, e) =>
+		// {
+		// 	this.StateHasChanged();
+		// };
+
+		base.OnInitialized();
+	}
+}
